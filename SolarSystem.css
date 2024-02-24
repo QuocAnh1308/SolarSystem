@@ -1,0 +1,86 @@
+body{
+    margin: 0px;
+    height: 100vh;
+    width: 100vw;
+}
+#SolarSystem{
+    background-color: black;
+    width: inherit;
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#EarthSystem{
+    /* transform-style: preserve-3d;
+    animation: Earth 5s linear infinite; */
+    height: 480px;
+    width: 480px;
+    position: relative;
+    top: 5px;
+    right: 0;
+    transform-style: flat;
+    animation: Earth 10s linear infinite;
+    transform: translateZ(100px);
+}
+
+#Sun{
+    background-image: radial-gradient(circle, rgb(226, 88, 29), rgb(238, 198, 123));
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 70px 30px rgb(240, 191, 119);
+    position: absolute;
+    z-index: 1;
+}
+
+#Earth{
+    background-image: url(Earth.jpg);
+    height: 50px;
+    width: 50px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 1;
+    top: 35px;
+    left: 35px;
+    box-shadow: 0px 0px 30px 5px rgb(142, 216, 236);
+}
+
+#MoonFrame{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    transform-style: preserve-3d;
+    animation: Moon 5s linear infinite;
+}
+
+#Moon{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 30px 5px white;
+    background-image: radial-gradient(circle, rgb(191, 184, 184), rgb(83, 76, 76) );
+}
+
+@keyframes Earth {
+    0%{
+        transform: translateZ(300px) rotateZ(0deg);
+    }
+    100%{
+        transform: translateZ(300px) rotateZ(360deg);
+    }
+}
+
+@keyframes Moon {
+    0%{
+        transform: rotateZ(0deg);
+    }
+    100%{
+        transform: rotateZ(360deg);
+    }
+}
